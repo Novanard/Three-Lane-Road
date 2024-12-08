@@ -9,6 +9,7 @@ Features;
 -Lives: The player starts with three lives, and the game ends when all lives are lost.
 -Endless gameplay: The game continues endlessly, challenging the player to survive as long as possible.
 
-Requirements
+Requirements:
+
 -Android device with vibration support.
 -Compatible with Android SDK for development.
