@@ -1,7 +1,9 @@
 # Three-Lane-Road
-This mini-game is a simple endless runner where the player controls a car moving on a three-lane road. The objective is to avoid obstacles and survive as long as possible with limited lives.
+This mini-game is a simple endless runner where the player controls a car moving on a three-lane road.
+The objective is to avoid obstacles and survive as long as possible with limited lives.
 
 Features;
+
 -Three-lane road: The game environment consists of three lanes.
 
 -Car movement: The car can move left or right to avoid obstacles.
