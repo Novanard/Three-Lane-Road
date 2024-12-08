@@ -10,5 +10,5 @@ Features;
 -Endless gameplay: The game continues endlessly, challenging the player to survive as long as possible.
 
 Requirements
--ndroid device with vibration support.
+-Android device with vibration support.
 -Compatible with Android SDK for development.
