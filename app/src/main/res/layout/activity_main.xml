@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/bg_color">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/heartLayout"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/heart_margin">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/heart_icon_width"
+        android:layout_height="@dimen/heart_icon_height"
+        android:id="@+id/main_heart1"
+        app:srcCompat="@drawable/heart"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/heart_icon_width"
+        android:layout_height="@dimen/heart_icon_height"
+        android:id="@+id/main_heart2"
+        app:srcCompat="@drawable/heart"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/heart_icon_width"
+        android:layout_height="@dimen/heart_icon_height"
+        android:id="@+id/main_heart3"
+        app:srcCompat="@drawable/heart"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstRow"
+        android:layout_below="@id/heartLayout"
+        android:layout_centerInParent="true">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/stone00"
+        android:layout_width="@dimen/stone_width"
+        android:layout_height="@dimen/stone_height"
+        app:srcCompat="@drawable/stoneIcon"
+        android:layout_margin="@dimen/stone_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/stone01"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/stoneIcon"
+            android:layout_margin="@dimen/stone_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/stone02"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/stoneIcon"
+            android:layout_margin="@dimen/stone_margin"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/secondRow"
+        android:layout_below="@id/firstRow"
+        android:layout_centerInParent="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/stone10"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/stoneIcon"
+            android:layout_margin="@dimen/stone_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/stone11"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/stoneIcon"
+            android:layout_margin="@dimen/stone_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/stone12"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/stoneIcon"
+            android:layout_margin="@dimen/stone_margin"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/thirdRow"
+        android:layout_below="@id/secondRow"
+        android:layout_centerInParent="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/stone20"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/stoneIcon"
+            android:layout_margin="@dimen/stone_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/stone21"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/stoneIcon"
+            android:layout_margin="@dimen/stone_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/stone22"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/stoneIcon"
+            android:layout_margin="@dimen/stone_margin"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fourthRow"
+        android:layout_below="@id/thirdRow"
+        android:layout_centerInParent="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/stone30"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/stoneIcon"
+            android:layout_margin="@dimen/stone_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/stone31"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/stoneIcon"
+            android:layout_margin="@dimen/stone_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/stone32"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/stoneIcon"
+            android:layout_margin="@dimen/stone_margin"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fifthRow"
+        android:layout_below="@id/fourthRow"
+        android:layout_centerInParent="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/stone40"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/stoneIcon"
+            android:layout_margin="@dimen/stone_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/stone41"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/stoneIcon"
+            android:layout_margin="@dimen/stone_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/stone42"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/stoneIcon"
+            android:layout_margin="@dimen/stone_margin"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/carRow"
+        android:layout_below="@id/fifthRow"
+        android:layout_centerInParent="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/carLeft"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/green_car"
+            android:layout_margin="@dimen/stone_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/carMid"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/green_car"
+            android:layout_margin="@dimen/stone_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/carRight"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/green_car"
+            android:layout_margin="@dimen/stone_margin"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/arrowLayout"
+        android:layout_below="@id/carRow"
+        android:layout_centerInParent="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/leftArrowBtn"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/left_arrow"
+            android:layout_margin="@dimen/stone_margin"
+            android:layout_alignParentLeft="true"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/rightArrowBtn"
+            android:layout_width="@dimen/stone_width"
+            android:layout_height="@dimen/stone_height"
+            app:srcCompat="@drawable/right_arrow"
+            android:layout_margin="@dimen/stone_margin"
+            android:layout_alignParentRight="true"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
+
