@@ -41,19 +41,19 @@
         android:id="@+id/stone00"
         android:layout_width="@dimen/stone_width"
         android:layout_height="@dimen/stone_height"
-        app:srcCompat="@drawable/stoneIcon"
+        app:srcCompat="@drawable/stone_icon"
         android:layout_margin="@dimen/stone_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/stone01"
             android:layout_width="@dimen/stone_width"
             android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stoneIcon"
+            app:srcCompat="@drawable/stone_icon"
             android:layout_margin="@dimen/stone_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/stone02"
             android:layout_width="@dimen/stone_width"
             android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stoneIcon"
+            app:srcCompat="@drawable/stone_icon"
             android:layout_margin="@dimen/stone_margin"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -70,19 +70,19 @@
             android:id="@+id/stone10"
             android:layout_width="@dimen/stone_width"
             android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stoneIcon"
+            app:srcCompat="@drawable/stone_icon"
             android:layout_margin="@dimen/stone_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/stone11"
             android:layout_width="@dimen/stone_width"
             android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stoneIcon"
+            app:srcCompat="@drawable/stone_icon"
             android:layout_margin="@dimen/stone_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/stone12"
             android:layout_width="@dimen/stone_width"
             android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stoneIcon"
+            app:srcCompat="@drawable/stone_icon"
             android:layout_margin="@dimen/stone_margin"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -98,19 +98,19 @@
             android:id="@+id/stone20"
             android:layout_width="@dimen/stone_width"
             android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stoneIcon"
+            app:srcCompat="@drawable/stone_icon"
             android:layout_margin="@dimen/stone_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/stone21"
             android:layout_width="@dimen/stone_width"
             android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stoneIcon"
+            app:srcCompat="@drawable/stone_icon"
             android:layout_margin="@dimen/stone_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/stone22"
             android:layout_width="@dimen/stone_width"
             android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stoneIcon"
+            app:srcCompat="@drawable/stone_icon"
             android:layout_margin="@dimen/stone_margin"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -126,19 +126,19 @@
             android:id="@+id/stone30"
             android:layout_width="@dimen/stone_width"
             android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stoneIcon"
+            app:srcCompat="@drawable/stone_icon"
             android:layout_margin="@dimen/stone_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/stone31"
             android:layout_width="@dimen/stone_width"
             android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stoneIcon"
+            app:srcCompat="@drawable/stone_icon"
             android:layout_margin="@dimen/stone_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/stone32"
             android:layout_width="@dimen/stone_width"
             android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stoneIcon"
+            app:srcCompat="@drawable/stone_icon"
             android:layout_margin="@dimen/stone_margin"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -154,19 +154,19 @@
             android:id="@+id/stone40"
             android:layout_width="@dimen/stone_width"
             android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stoneIcon"
+            app:srcCompat="@drawable/stone_icon"
             android:layout_margin="@dimen/stone_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/stone41"
             android:layout_width="@dimen/stone_width"
             android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stoneIcon"
+            app:srcCompat="@drawable/stone_icon"
             android:layout_margin="@dimen/stone_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/stone42"
             android:layout_width="@dimen/stone_width"
             android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stoneIcon"
+            app:srcCompat="@drawable/stone_icon"
             android:layout_margin="@dimen/stone_margin"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>

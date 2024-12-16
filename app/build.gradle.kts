@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.three_lane_road"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.three_lane_road"
         minSdk = 21
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
