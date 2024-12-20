@@ -206,20 +206,22 @@
         android:layout_below="@id/carRow"
         android:layout_centerInParent="true">
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/leftArrowBtn"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
             app:srcCompat="@drawable/left_arrow"
             android:layout_margin="@dimen/stone_margin"
+            android:contentDescription="Move left"
             android:layout_alignParentLeft="true"/>
-        <androidx.appcompat.widget.AppCompatImageView
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/rightArrowBtn"
-            android:layout_width="@dimen/stone_width"
+            android:layout_width="500dp"
             android:layout_height="@dimen/stone_height"
             app:srcCompat="@drawable/right_arrow"
             android:layout_margin="@dimen/stone_margin"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentRight="true"
+            android:contentDescription="Move right"/>
 
 
     </RelativeLayout>

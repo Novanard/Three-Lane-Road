@@ -7,33 +7,38 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import logic.GameController
 
 class MainActivity : AppCompatActivity() {
-   private var lives=3
-  private  var currLane=1
+
   private  lateinit var rows: List<ViewGroup>
    private lateinit var matrix: List<List<ImageView>>
+   private lateinit var controller:GameController
+   private lateinit var mainLeftArrow:FloatingActionButton
+   private lateinit var mainRightArrow:FloatingActionButton
+   private lateinit var lives:Array<AppCompatImageView>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-            initGame()
+           findViews()
+        controller = GameController(matrix,lives,this)
+
+
 
         }
 
-
-   private fun initGame(){
-        lives=3
-        currLane=1
-        initGrid()
-
-
-
-    }
-   private fun initGrid(){
+   private fun findViews(){
+       mainRightArrow=findViewById<FloatingActionButton>(R.id.rightArrowBtn)
+       mainLeftArrow=findViewById<FloatingActionButton>(R.id.leftArrowBtn)
+       lives = arrayOf(findViewById(R.id.main_heart1),
+           findViewById(R.id.main_heart2),
+           findViewById(R.id.main_heart3))
         rows = listOf(
            findViewById(R.id.firstRow),
             findViewById(R.id.secondRow),
@@ -74,12 +79,5 @@ class MainActivity : AppCompatActivity() {
                 findViewById<ImageView>(R.id.carLeft))
         )
 
-       for(i in 0 until matrix.size-1){
-           for(cell in matrix[i])
-               cell.visibility= View.INVISIBLE
-       }
-       matrix[matrix.size-1][0].visibility=View.INVISIBLE
-       matrix[matrix.size-1][currLane].visibility=View.VISIBLE
-       matrix[matrix.size-1][2].visibility=View.INVISIBLE
     }
     }
