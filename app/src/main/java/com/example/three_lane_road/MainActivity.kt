@@ -1,6 +1,7 @@
 package com.example.three_lane_road
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -27,7 +28,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
            findViews()
-        controller = GameController(matrix,lives,this)
+        initArrows()
+         controller = GameController(matrix,lives,this)
+        controller.startGame()
 
 
 
@@ -74,10 +77,21 @@ class MainActivity : AppCompatActivity() {
                 findViewById<ImageView>(R.id.stone42)),
 
             listOf(
-                findViewById<ImageView>(R.id.carRight),
+                findViewById<ImageView>(R.id.carLeft),
                 findViewById<ImageView>(R.id.carMid),
-                findViewById<ImageView>(R.id.carLeft))
+                findViewById<ImageView>(R.id.carRight))
         )
 
     }
+
+    private fun initArrows(){
+        mainLeftArrow.setOnClickListener {
+            Log.d("ArrowClick", "Left Arrow Clicked")
+            controller.changeLane(-1)
+        }
+        mainRightArrow.setOnClickListener {
+            controller.changeLane(1)
+        }
     }
+    }
+
