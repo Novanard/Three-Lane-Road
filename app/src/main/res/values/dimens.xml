@@ -2,9 +2,9 @@
 <resources>
     <dimen name="heart_icon_width">40dp</dimen>
     <dimen name="heart_icon_height">30dp</dimen>
-    <dimen name="heart_margin">10dp</dimen>
+    <dimen name="heart_margin">40dp</dimen>
     <dimen name="heartLayout_width">120dp</dimen>
-    <dimen name="stone_height">75dp</dimen>
+    <dimen name="stone_height">100dp</dimen>
     <dimen name="stone_width">115dp</dimen>
     <dimen name="stone_margin">10dp</dimen>
 
