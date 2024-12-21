@@ -53,28 +53,28 @@ class MainActivity : AppCompatActivity() {
         )
         matrix=listOf(
             listOf(
-                findViewById<ImageView>(R.id.stone00),
-                findViewById<ImageView>(R.id.stone01),
-                findViewById<ImageView>(R.id.stone02)),
+                findViewById<ImageView>(R.id.obs00),
+                findViewById<ImageView>(R.id.obs01),
+                findViewById<ImageView>(R.id.obs02)),
             listOf(
-                findViewById<ImageView>(R.id.stone10),
-                findViewById<ImageView>(R.id.stone11),
-                findViewById<ImageView>(R.id.stone12)),
+                findViewById<ImageView>(R.id.obs10),
+                findViewById<ImageView>(R.id.obs11),
+                findViewById<ImageView>(R.id.obs12)),
             listOf(
-            findViewById<ImageView>(R.id.stone20),
-            findViewById<ImageView>(R.id.stone21),
-                findViewById<ImageView>(R.id.stone22)),
-            listOf(
-
-                findViewById<ImageView>(R.id.stone30),
-                findViewById<ImageView>(R.id.stone31),
-                findViewById<ImageView>(R.id.stone32)),
-
+            findViewById<ImageView>(R.id.obs20),
+            findViewById<ImageView>(R.id.obs21),
+                findViewById<ImageView>(R.id.obs22)),
             listOf(
 
-                findViewById<ImageView>(R.id.stone40),
-                findViewById<ImageView>(R.id.stone41),
-                findViewById<ImageView>(R.id.stone42)),
+                findViewById<ImageView>(R.id.obs30),
+                findViewById<ImageView>(R.id.obs31),
+                findViewById<ImageView>(R.id.obs32)),
+
+            listOf(
+
+                findViewById<ImageView>(R.id.obs40),
+                findViewById<ImageView>(R.id.obs41),
+                findViewById<ImageView>(R.id.obs42)),
 
             listOf(
                 findViewById<ImageView>(R.id.carLeft),
@@ -90,8 +90,12 @@ class MainActivity : AppCompatActivity() {
             controller.changeLane(-1)
         }
         mainRightArrow.setOnClickListener {
+            Log.d("ArrowClick", "Right Arrow Clicked")
             controller.changeLane(1)
         }
     }
+
+
+
     }
 

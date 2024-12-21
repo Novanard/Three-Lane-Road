@@ -1,8 +1,12 @@
 package logic
 
 import android.content.Context
+import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import android.os.VibrationEffect
+import android.os.Vibrator
+import android.os.VibratorManager
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
@@ -26,9 +30,9 @@ class GameController(
 
     }
 
-    // Init matrix with all stones invisible and the car in the middle lane
+    // Init matrix with all obstacles invisible and the car in the middle lane
     private fun prepareMatrix(){
-        //Clearing all obstables
+
         for( i in 0 until matrix.size-1){
             for(obstacle in matrix[i]){
                 obstacle.visibility= View.INVISIBLE
@@ -110,6 +114,7 @@ class GameController(
         numLives -= 1 // Decrement lives
         if (numLives >= 0) { // Updating the hearts icon layout
             lives[numLives].visibility = View.INVISIBLE
+            vibrate()
         }
 
         if (numLives == 0) {
@@ -132,9 +137,27 @@ class GameController(
         currLane = 1 // Reset to middle lane
         numLives = 3 // Reset lives
         gameStarted = true
-        //Reseting the 3 heart icons
+        //Resetting the 3 heart icons
         for(heart in lives)
             heart.visibility=View.VISIBLE
     }
+
+
+
+
+    private fun vibrate() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) { // API 31 and above
+            val vibratorManager = context.getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+            val vibrator = vibratorManager.defaultVibrator
+            val vibrationEffect = VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE)
+            vibrator.vibrate(vibrationEffect)
+        } else { // Below API 31
+            @Suppress("DEPRECATION") // Suppress deprecation warning for older APIs
+            val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            val vibrationEffect = VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE)
+            vibrator.vibrate(vibrationEffect)
+        }
+    }
+
 
 }
