@@ -91,7 +91,6 @@ class GameController(
                     if (matrix[i + 1][j].visibility == View.VISIBLE) {
                         // If the next position is visible, it means a crash occurred
                         handleCrash()
-                        Toast.makeText(context, "You crashed!", Toast.LENGTH_SHORT).show()
                     } else {
                         matrix[i + 1][j].visibility = View.VISIBLE
                     }
@@ -114,6 +113,7 @@ class GameController(
         numLives -= 1 // Decrement lives
         if (numLives >= 0) { // Updating the hearts icon layout
             lives[numLives].visibility = View.INVISIBLE
+            Toast.makeText(context, "You crashed!", Toast.LENGTH_SHORT).show()
             vibrate()
         }
 

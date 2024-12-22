@@ -208,17 +208,17 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/leftArrowBtn"
-            android:layout_width="500dp"
-            android:layout_height="500dp"
-            app:srcCompat="@drawable/left_arrow"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/ic_left_arrow"
             android:layout_margin="@dimen/stone_margin"
             android:contentDescription="Move left"
             android:layout_alignParentLeft="true"/>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/rightArrowBtn"
-            android:layout_width="500dp"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/right_arrow"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/ic_right_arrow"
             android:layout_margin="@dimen/stone_margin"
             android:layout_alignParentRight="true"
             android:contentDescription="Move right"/>
