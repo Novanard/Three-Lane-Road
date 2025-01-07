@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
            findViews()
-        initArrows()
+           initArrows()
          controller = GameController(matrix,lives,this)
         controller.startGame()
 
@@ -48,6 +48,8 @@ class MainActivity : AppCompatActivity() {
             findViewById(R.id.thirdRow),
             findViewById(R.id.fourthRow),
             findViewById(R.id.fifthRow),
+            findViewById(R.id.sixthRow),
+            findViewById(R.id.seventhRow),
             findViewById(R.id.carRow)
 
         )
@@ -55,31 +57,43 @@ class MainActivity : AppCompatActivity() {
             listOf(
                 findViewById<ImageView>(R.id.obs00),
                 findViewById<ImageView>(R.id.obs01),
-                findViewById<ImageView>(R.id.obs02)),
+                findViewById<ImageView>(R.id.obs02),
+                findViewById<ImageView>(R.id.obs03),
+                findViewById<ImageView>(R.id.obs04)),
             listOf(
                 findViewById<ImageView>(R.id.obs10),
                 findViewById<ImageView>(R.id.obs11),
-                findViewById<ImageView>(R.id.obs12)),
+                findViewById<ImageView>(R.id.obs12),
+                findViewById<ImageView>(R.id.obs13),
+                findViewById<ImageView>(R.id.obs14)),
             listOf(
-            findViewById<ImageView>(R.id.obs20),
-            findViewById<ImageView>(R.id.obs21),
-                findViewById<ImageView>(R.id.obs22)),
+                findViewById<ImageView>(R.id.obs20),
+                findViewById<ImageView>(R.id.obs21),
+                findViewById<ImageView>(R.id.obs22),
+                findViewById<ImageView>(R.id.obs23),
+                findViewById<ImageView>(R.id.obs24)),
             listOf(
 
                 findViewById<ImageView>(R.id.obs30),
                 findViewById<ImageView>(R.id.obs31),
-                findViewById<ImageView>(R.id.obs32)),
+                findViewById<ImageView>(R.id.obs32),
+                findViewById<ImageView>(R.id.obs33),
+                findViewById<ImageView>(R.id.obs34)),
 
             listOf(
 
                 findViewById<ImageView>(R.id.obs40),
                 findViewById<ImageView>(R.id.obs41),
-                findViewById<ImageView>(R.id.obs42)),
+                findViewById<ImageView>(R.id.obs42),
+                findViewById<ImageView>(R.id.obs43),
+                findViewById<ImageView>(R.id.obs44)),
 
             listOf(
-                findViewById<ImageView>(R.id.carLeft),
-                findViewById<ImageView>(R.id.carMid),
-                findViewById<ImageView>(R.id.carRight))
+                findViewById<ImageView>(R.id.car0),
+                findViewById<ImageView>(R.id.car1),
+                findViewById<ImageView>(R.id.car2),
+                findViewById<ImageView>(R.id.car3),
+                findViewById<ImageView>(R.id.car4))
         )
 
     }

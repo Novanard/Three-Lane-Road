@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameOptions"
+    android:background="@color/bg_color"
+    >
+    <TextView
+        android:id="@+id/controlGroupText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose Your Playing Mode"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:layout_marginTop="16dp"/>
+    <RadioGroup
+        android:id="@+id/controlGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/controlGroupText">
+
+        <RadioButton
+            android:id="@+id/radioSensors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play with Sensors" />
+
+        <RadioButton
+            android:id="@+id/radioButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play with Buttons" />
+    </RadioGroup>
+    <TextView
+        android:id="@+id/speedGroupText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose Your Playing Speed"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/controlGroup"/>
+    <RadioGroup
+        android:layout_marginTop="60dp"
+        android:id="@+id/speedGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/controlGroup"
+        >
+
+        <RadioButton
+            android:id="@+id/radioFast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fast"
+            />
+
+        <RadioButton
+            android:id="@+id/radioSlow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Slow" />
+    </RadioGroup>
+
+</RelativeLayout>

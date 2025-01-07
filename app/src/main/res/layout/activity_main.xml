@@ -39,22 +39,34 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/obs00"
-        android:layout_width="@dimen/stone_width"
-        android:layout_height="@dimen/stone_height"
-        app:srcCompat="@drawable/stone_icon"
-        android:layout_margin="@dimen/stone_margin"/>
+        android:layout_width="@dimen/obs_width"
+        android:layout_height="@dimen/obs_height"
+        app:srcCompat="@drawable/obs_icon"
+        android:layout_margin="@dimen/obs_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/obs01"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stone_icon"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/obs02"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stone_icon"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs03"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs04"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -68,22 +80,34 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/obs10"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stone_icon"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/obs11"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stone_icon"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/obs12"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stone_icon"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs13"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs14"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -96,22 +120,34 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/obs20"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stone_icon"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/obs21"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stone_icon"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/obs22"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stone_icon"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs23"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs24"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -124,22 +160,34 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/obs30"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stone_icon"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/obs31"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stone_icon"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/obs32"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stone_icon"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs33"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs34"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -152,50 +200,152 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/obs40"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stone_icon"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/obs41"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stone_icon"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/obs42"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/stone_icon"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs43"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs44"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sixthRow"
+        android:layout_below="@id/fifthRow"
+        android:layout_centerInParent="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs50"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs51"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs52"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs53"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs54"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/carRow"
-        android:layout_below="@id/fifthRow"
+        android:id="@+id/seventhRow"
+        android:layout_below="@id/sixthRow"
         android:layout_centerInParent="true">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/carLeft"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/green_car"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:id="@+id/obs60"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/carMid"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
-            app:srcCompat="@drawable/green_car"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:id="@+id/obs61"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/carRight"
-            android:layout_width="@dimen/stone_width"
-            android:layout_height="@dimen/stone_height"
+            android:id="@+id/obs62"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs63"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/obs64"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/obs_icon"
+            android:layout_margin="@dimen/obs_margin"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/carRow"
+        android:layout_below="@id/seventhRow"
+        android:layout_centerInParent="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/car0"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
             app:srcCompat="@drawable/green_car"
-            android:layout_margin="@dimen/stone_margin"/>
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/car1"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/green_car"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/car2"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/green_car"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/car3"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/green_car"
+            android:layout_margin="@dimen/obs_margin"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/car4"
+            android:layout_width="@dimen/obs_width"
+            android:layout_height="@dimen/obs_height"
+            app:srcCompat="@drawable/green_car"
+            android:layout_margin="@dimen/obs_margin"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -211,7 +361,7 @@
             android:layout_width="150dp"
             android:layout_height="100dp"
             app:srcCompat="@drawable/ic_left_arrow"
-            android:layout_margin="@dimen/stone_margin"
+            android:layout_margin="@dimen/obs_margin"
             android:contentDescription="Move left"
             android:layout_alignParentLeft="true"/>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -219,7 +369,7 @@
             android:layout_width="150dp"
             android:layout_height="100dp"
             app:srcCompat="@drawable/ic_right_arrow"
-            android:layout_margin="@dimen/stone_margin"
+            android:layout_margin="@dimen/obs_margin"
             android:layout_alignParentRight="true"
             android:contentDescription="Move right"/>
 
