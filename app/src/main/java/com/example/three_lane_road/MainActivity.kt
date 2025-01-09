@@ -2,17 +2,13 @@ package com.example.three_lane_road
 
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import logic.GameController
+import utilities.TiltDetector
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,7 +18,7 @@ class MainActivity : AppCompatActivity() {
    private lateinit var mainLeftArrow:FloatingActionButton
    private lateinit var mainRightArrow:FloatingActionButton
    private lateinit var lives:Array<AppCompatImageView>
-
+   private var tiltDetector: TiltDetector? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,8 +26,9 @@ class MainActivity : AppCompatActivity() {
            findViews()
            initArrows()
          controller = GameController(matrix,lives,this)
-        controller.startGame()
-
+       // controller.startGame()
+        tiltDetector = TiltDetector(this,controller)
+        tiltDetector?.start()
 
 
         }
@@ -87,6 +84,20 @@ class MainActivity : AppCompatActivity() {
                 findViewById<ImageView>(R.id.obs42),
                 findViewById<ImageView>(R.id.obs43),
                 findViewById<ImageView>(R.id.obs44)),
+            listOf(
+
+                findViewById<ImageView>(R.id.obs50),
+                findViewById<ImageView>(R.id.obs51),
+                findViewById<ImageView>(R.id.obs52),
+                findViewById<ImageView>(R.id.obs53),
+                findViewById<ImageView>(R.id.obs54)),
+            listOf(
+
+                findViewById<ImageView>(R.id.obs60),
+                findViewById<ImageView>(R.id.obs61),
+                findViewById<ImageView>(R.id.obs62),
+                findViewById<ImageView>(R.id.obs63),
+                findViewById<ImageView>(R.id.obs64)),
 
             listOf(
                 findViewById<ImageView>(R.id.car0),

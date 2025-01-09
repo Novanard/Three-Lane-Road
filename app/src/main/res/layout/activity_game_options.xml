@@ -9,60 +9,69 @@
     android:background="@color/bg_color"
     >
     <TextView
-        android:id="@+id/controlGroupText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choose Your Playing Mode"
+        android:text="@string/game_options"
         android:textStyle="bold"
-        android:textSize="17sp"
-        android:layout_marginTop="16dp"/>
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/text_margin"
+        android:textSize="@dimen/text_title_size"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/play_mode"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/controlGroup"
+        android:textSize="@dimen/text_title_size"/>
     <RadioGroup
         android:id="@+id/controlGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/controlGroupText">
+        android:layout_centerInParent="true">
 
         <RadioButton
             android:id="@+id/radioSensors"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Play with Sensors" />
+            android:text="@string/play_with_sensors" />
 
         <RadioButton
             android:id="@+id/radioButtons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Play with Buttons" />
+            android:text="@string/play_with_buttons" />
     </RadioGroup>
-    <TextView
-        android:id="@+id/speedGroupText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Choose Your Playing Speed"
-        android:textStyle="bold"
-        android:textSize="17sp"
-        android:layout_marginTop="50dp"
-        android:layout_below="@id/controlGroup"/>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/controlGroup"
+    android:text="@string/difficultiy"
+    android:textStyle="bold"
+    android:layout_centerInParent="true"
+    android:layout_marginTop="@dimen/text_margin"
+    android:textSize="@dimen/text_title_size" />
     <RadioGroup
-        android:layout_marginTop="60dp"
         android:id="@+id/speedGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/controlGroup"
+        android:layout_centerInParent="true"
         >
-
         <RadioButton
             android:id="@+id/radioFast"
+            android:layout_marginTop="60dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fast"
+            android:text="@string/fast_movement_hard"
             />
 
         <RadioButton
             android:id="@+id/radioSlow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Slow" />
+            android:text="@string/slow_movement_easy" />
     </RadioGroup>
 
 </RelativeLayout>

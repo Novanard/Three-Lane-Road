@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Three-Lane-Road</string>
+    <string name="slow_movement_easy">Slow Movement(Easy)</string>
+    <string name="fast_movement_hard">Fast Movement(Hard)</string>
+    <string name="difficultiy">Difficultiy:</string>
+    <string name="play_with_buttons">Play with Buttons</string>
+    <string name="play_with_sensors">Play with Sensors</string>
+    <string name="play_mode">Play Mode</string>
+    <string name="game_options">Game Options</string>
 </resources>

@@ -12,38 +12,39 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageView
+import interfaces.TiltCallback
 import kotlinx.coroutines.Runnable
+import utilities.TiltDetector
 
 class GameController(
-    private val matrix:List<List<ImageView>>,
-    private val lives:Array<AppCompatImageView>,
-    private val context: Context) {
-    private var currLane=1
-    private var numLives=3
-    private val numLanes=3
+    private val matrix: List<List<ImageView>>,
+    private val lives: Array<AppCompatImageView>,
+    private val context: Context
+) : TiltCallback {
+    private var currLane = 2
+    private var numLives = 3
+    private val numLanes = 5
     private val handler = Handler(Looper.getMainLooper())
-    private var gameStarted=true
+    private var gameStarted = true
 
-    init{
+    init {
         prepareMatrix()
         resetGameState()
-
     }
 
     // Init matrix with all obstacles invisible and the car in the middle lane
-    private fun prepareMatrix(){
-
-        for( i in 0 until matrix.size-1){
-            for(obstacle in matrix[i]){
-                obstacle.visibility= View.INVISIBLE
+    private fun prepareMatrix() {
+        for (i in 0 until matrix.size - 1) {
+            for (obstacle in matrix[i]) {
+                obstacle.visibility = View.INVISIBLE
             }
         }
-        //Placing car in the middle lane
-        for(i in 0 until matrix[matrix.size-1].size){
-            if(i!= currLane)
-                matrix[matrix.size-1][i].visibility=View.INVISIBLE
+        // Placing car in the middle lane
+        for (i in 0 until matrix[matrix.size - 1].size) {
+            if (i != currLane)
+                matrix[matrix.size - 1][i].visibility = View.INVISIBLE
             else
-                matrix[matrix.size-1][i].visibility=View.VISIBLE
+                matrix[matrix.size - 1][i].visibility = View.VISIBLE
         }
     }
 
@@ -56,30 +57,37 @@ class GameController(
                 }
                 moveObstaclesDown()
                 addRandomObstacle()
-                handler.postDelayed(this,1000)
+                handler.postDelayed(this, 1000)
             }
         }, 1000)
     }
 
-     fun changeLane(num:Int){
-        var newLane=currLane+num
-        if(newLane>=2)
-            newLane=2
-        else if(newLane<=0)
-            newLane=0
-         Log.d("ChangeLane", "changeLane: $newLane")
-        for(i in 0 until numLanes){
-            if(i!=newLane)
-            matrix[matrix.size-1][i].visibility=View.INVISIBLE
-            else
-                matrix[matrix.size-1][i].visibility=View.VISIBLE
+    fun changeLane(targetLane: Int) {
+        var newLane = targetLane
+        if (newLane >= 4) {
+            newLane = 4
+        } else if (newLane <= 0) {
+            newLane = 0
         }
-         currLane = newLane
+
+        Log.d("ChangeLane", "changeLane: $newLane")
+
+        for (i in 0 until numLanes) {
+            if (i != newLane) {
+                matrix[matrix.size - 1][i].visibility = View.INVISIBLE
+            } else {
+                matrix[matrix.size - 1][i].visibility = View.VISIBLE
+            }
+        }
+        currLane = newLane // Update the final currLane
     }
+
+
     private fun addRandomObstacle() {
         val randomLane = (0 until numLanes).random()
         matrix[0][randomLane].visibility = View.VISIBLE
     }
+
     private fun moveObstaclesDown() {
         // Process rows from bottom to top, excluding the car row
         for (i in matrix.size - 2 downTo 0) {
@@ -107,8 +115,6 @@ class GameController(
         }
     }
 
-
-
     private fun handleCrash() {
         numLives -= 1 // Decrement lives
         if (numLives >= 0) { // Updating the hearts icon layout
@@ -122,7 +128,6 @@ class GameController(
         }
     }
 
-
     private fun endGame() {
         gameStarted = false
         handler.removeCallbacksAndMessages(null)
@@ -134,16 +139,13 @@ class GameController(
     }
 
     private fun resetGameState() {
-        currLane = 1 // Reset to middle lane
+        currLane = 2 // Reset to middle lane
         numLives = 3 // Reset lives
         gameStarted = true
-        //Resetting the 3 heart icons
-        for(heart in lives)
-            heart.visibility=View.VISIBLE
+        // Resetting the 3 heart icons
+        for (heart in lives)
+            heart.visibility = View.VISIBLE
     }
-
-
-
 
     private fun vibrate() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) { // API 31 and above
@@ -158,6 +160,31 @@ class GameController(
             vibrator.vibrate(vibrationEffect)
         }
     }
+    fun getCurrLane(): Int {
+        return currLane
+    }
 
+    // SENSOR FUNCTIONS
+    override fun tiltLeft() {
+        if (currLane > 0) {
+            currLane -= 1
+            changeLane(currLane)
+            Log.d("Move Left", "changeLane: $currLane")
+        }
+    }
+
+    override fun tiltRight() {
+        if (currLane < 4) {
+            currLane += 1
+            changeLane(currLane)
+            Log.d("Move Right", "changeLane: $currLane")
+        }
+    }
+
+    override fun tiltCenter() {
+        currLane = 2
+        changeLane(currLane)
+        Log.d("Move Center", "changeLane: $currLane")
+    }
 
 }
