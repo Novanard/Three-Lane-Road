@@ -63,24 +63,24 @@ class GameController(
     }
 
     fun changeLane(targetLane: Int) {
-        var newLane = targetLane
-        if (newLane >= 4) {
-            newLane = 4
-        } else if (newLane <= 0) {
-            newLane = 0
-        }
+        // Calculate the new lane based on the current lane
+        val newLane = (currLane + targetLane).coerceIn(0, 4) // Ensure it's within bounds [0, 4]
 
-        Log.d("ChangeLane", "changeLane: $newLane")
+        Log.d("ChangeLane", "Changing lane to: $newLane")
 
+        // Update visibility for all lanes
         for (i in 0 until numLanes) {
-            if (i != newLane) {
-                matrix[matrix.size - 1][i].visibility = View.INVISIBLE
-            } else {
+            if (i == newLane) {
                 matrix[matrix.size - 1][i].visibility = View.VISIBLE
+            } else {
+                matrix[matrix.size - 1][i].visibility = View.INVISIBLE
             }
         }
-        currLane = newLane // Update the final currLane
+
+        // Update the current lane
+        currLane = newLane
     }
+
 
 
     private fun addRandomObstacle() {

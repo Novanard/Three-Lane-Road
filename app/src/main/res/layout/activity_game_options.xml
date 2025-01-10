@@ -74,4 +74,13 @@
             android:text="@string/slow_movement_easy" />
     </RadioGroup>
 
+    <Button
+        android:id="@+id/startGameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/speedGroup"
+        android:text="@string/start_game" />
+
+
 </RelativeLayout>
