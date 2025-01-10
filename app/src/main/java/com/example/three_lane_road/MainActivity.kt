@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
             findViewById<FloatingActionButton>(R.id.leftArrowBtn).visibility= View.GONE
             findViewById<FloatingActionButton>(R.id.rightArrowBtn).visibility= View.GONE
         }
+        controller.startGame()
     }
 
     private fun findViews() {
@@ -126,11 +127,14 @@ class MainActivity : AppCompatActivity() {
     private fun initArrows() {
         mainLeftArrow.setOnClickListener {
             Log.d("ArrowClick", "Left Arrow Clicked")
-            controller.changeLane(-1)
+            val targetLane = (controller.getCurrLane() - 1).coerceIn(0, 4)
+            controller.changeLane(targetLane)
         }
         mainRightArrow.setOnClickListener {
             Log.d("ArrowClick", "Right Arrow Clicked")
-            controller.changeLane(1)
+            val targetLane = (controller.getCurrLane() + 1).coerceIn(0, 4)
+            controller.changeLane(targetLane)
         }
     }
+
 }
