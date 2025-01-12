@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -19,18 +20,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainLeftArrow: FloatingActionButton
     private lateinit var mainRightArrow: FloatingActionButton
     private lateinit var lives: Array<AppCompatImageView>
+    private lateinit var score:TextView
     private var tiltDetector: TiltDetector? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         // Retrieve the control mode from the Intent
         val controlMode = intent.getStringExtra("CONTROL_MODE") ?: "buttons"
-
         findViews()
         controller = GameController(matrix, lives, this)
-
         if (controlMode == "buttons") {
             // Initialize game with buttons
             initArrows()
@@ -44,11 +43,12 @@ class MainActivity : AppCompatActivity() {
             findViewById<FloatingActionButton>(R.id.rightArrowBtn).visibility= View.GONE
         }
         controller.startGame()
-    }
 
+    }
     private fun findViews() {
         mainRightArrow = findViewById(R.id.rightArrowBtn)
         mainLeftArrow = findViewById(R.id.leftArrowBtn)
+        score=findViewById(R.id.score_textview)
         lives = arrayOf(
             findViewById(R.id.main_heart1),
             findViewById(R.id.main_heart2),

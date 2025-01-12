@@ -7,7 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@color/bg_color">
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="000000"
+        android:textSize="22sp"
+        android:layout_marginTop="@dimen/heart_margin"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:id="@+id/score_textview"/>
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/heartLayout"
         android:layout_width="120dp"

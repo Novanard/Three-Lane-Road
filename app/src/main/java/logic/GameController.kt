@@ -1,5 +1,6 @@
 package logic
 
+import android.app.Activity
 import android.content.Context
 import android.os.Build
 import android.os.Handler
@@ -10,8 +11,10 @@ import android.os.VibratorManager
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageView
+import com.example.three_lane_road.R
 import interfaces.TiltCallback
 import kotlinx.coroutines.Runnable
 import utilities.TiltDetector
@@ -22,11 +25,12 @@ class GameController(
     private val context: Context
 ) : TiltCallback {
     private var currLane = 2
+    private var score=0
     private var numLives = 3
     private val numLanes = 5
     private val handler = Handler(Looper.getMainLooper())
     private var gameStarted = true
-
+    private var obsCounter = 0 // For every 3 obstacles 1 coin is spawned
     init {
         prepareMatrix()
         resetGameState()
@@ -56,12 +60,23 @@ class GameController(
                     resetGameState()
                 }
                 moveObstaclesDown()
+                moveCoinsDown()
+                score+=1 // "Increasing the score/odometer"
+                refreshScore()
+                if(obsCounter==3) { //If we reached 3 obstacles we spawn a coin and reset the counter
+                    obsCounter = 0
+                    addRandomCoin()
+                }
+                else
                 addRandomObstacle()
+
                 handler.postDelayed(this, 1000)
             }
         }, 1000)
     }
-
+    fun refreshScore(){
+        (context as Activity).findViewById<TextView>(R.id.score_textview).setText(score.toString())
+    }
     fun changeLane(targetLane: Int) {
         val newLane = targetLane.coerceIn(0, numLanes - 1) // Ensure target lane is valid
 
@@ -86,34 +101,75 @@ class GameController(
     private fun addRandomObstacle() {
         val randomLane = (0 until numLanes).random()
         matrix[0][randomLane].visibility = View.VISIBLE
+        matrix[0][randomLane].tag="OBSTACLE"
+        obsCounter+=1
+    }
+
+    private fun addRandomCoin(){
+        val randomLane = (0 until numLanes).random()
+        matrix[0][randomLane].setImageResource(R.drawable.coin) //Changing the image from obstacle to a coin
+        matrix[0][randomLane].visibility=View.VISIBLE
+        matrix[0][randomLane].tag="COIN"
     }
 
     private fun moveObstaclesDown() {
-        // Process rows from bottom to top, excluding the car row
-        for (i in matrix.size - 2 downTo 0) {
+        for (i in matrix.size - 2 downTo 0) { // Start from the second-to-last row
             for (j in 0 until numLanes) {
-                if (matrix[i][j].visibility == View.VISIBLE) {
-                    matrix[i][j].visibility = View.INVISIBLE // Clear current position
+                if (matrix[i][j].visibility == View.VISIBLE && matrix[i][j].tag == "OBSTACLE") {
+                    matrix[i][j].visibility = View.INVISIBLE
+                    matrix[i][j].tag = null
 
                     // Move obstacle to the next row
-                    if (matrix[i + 1][j].visibility == View.VISIBLE) {
-                        // If the next position is visible, it means a crash occurred
+                    if (i + 1 == matrix.size - 2 && j == currLane) {
+                        // If the obstacle is just above the car, trigger a crash
                         handleCrash()
-                    } else {
+                    } else if (matrix[i + 1][j].visibility != View.VISIBLE) {
+                        matrix[i + 1][j].setImageResource(R.drawable.obs_icon)
                         matrix[i + 1][j].visibility = View.VISIBLE
+                        matrix[i + 1][j].tag = "OBSTACLE"
                     }
                 }
             }
         }
 
-        // Handle the bottom row separately (obstacles reaching the end without a crash)
+        // Clear obstacles reaching the second-to-last row
         for (j in 0 until numLanes) {
-            if (matrix[matrix.size - 1][j].visibility == View.VISIBLE && j != currLane) {
-                // Clear obstacle only if it's not the car
-                matrix[matrix.size - 1][j].visibility = View.INVISIBLE
+            if (matrix[matrix.size - 2][j].visibility == View.VISIBLE && matrix[matrix.size - 2][j].tag == "OBSTACLE") {
+                matrix[matrix.size - 2][j].visibility = View.INVISIBLE
+                matrix[matrix.size - 2][j].tag = null
             }
         }
     }
+
+    private fun moveCoinsDown() {
+        for (i in matrix.size - 2 downTo 0) { // Start from the second-to-last row
+            for (j in 0 until numLanes) {
+                if (matrix[i][j].visibility == View.VISIBLE && matrix[i][j].tag == "COIN") {
+                    matrix[i][j].visibility = View.INVISIBLE
+                    matrix[i][j].tag = null
+
+                    // Move coin to the next row
+                    if (i + 1 == matrix.size - 2 && j == currLane) {
+                        // If the coin is just above the car, collect the coin
+                        collectCoin()
+                    } else if (matrix[i + 1][j].visibility != View.VISIBLE) {
+                        matrix[i + 1][j].setImageResource(R.drawable.coin)
+                        matrix[i + 1][j].visibility = View.VISIBLE
+                        matrix[i + 1][j].tag = "COIN"
+                    }
+                }
+            }
+        }
+
+        // Clear coins reaching the second-to-last row
+        for (j in 0 until numLanes) {
+            if (matrix[matrix.size - 2][j].visibility == View.VISIBLE && matrix[matrix.size - 2][j].tag == "COIN") {
+                matrix[matrix.size - 2][j].visibility = View.INVISIBLE
+                matrix[matrix.size - 2][j].tag = null
+            }
+        }
+    }
+
 
     private fun handleCrash() {
         numLives -= 1 // Decrement lives
@@ -127,6 +183,10 @@ class GameController(
             endGame()
         }
     }
+    private fun collectCoin(){
+        score+=1
+    }
+
 
     private fun endGame() {
         gameStarted = false
@@ -162,6 +222,10 @@ class GameController(
     }
     fun getCurrLane(): Int {
         return currLane
+    }
+
+    fun getScore():Int{
+        return score
     }
 
     // SENSOR FUNCTIONS
