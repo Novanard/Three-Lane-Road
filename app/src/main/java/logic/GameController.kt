@@ -33,6 +33,7 @@ class GameController(
     private val numLanes = 5
     private val handler = Handler(Looper.getMainLooper())
     private var gameStarted = true
+    private var refreshSpeed=1000
     private var obsCounter = 0 // For every 3 obstacles 1 coin is spawned
     init {
         prepareMatrix()
@@ -56,6 +57,8 @@ class GameController(
     }
 
     fun startGame() {
+
+        checkSpeed()
         handler.postDelayed(object : Runnable {
             override fun run() {
                 if (!gameStarted) { // Game lost and needs a reset
@@ -77,12 +80,18 @@ class GameController(
                     addRandomObstacle()
                 }
                 if (gameStarted) {
-                    handler.postDelayed(this, 1000) //Loop only if the game is started
+                    handler.postDelayed(this, refreshSpeed.toLong()) //Loop only if the game is started
                 }
             }
         }, 1000)
     }
-
+    private fun checkSpeed(){
+        val speedMode=(context as Activity).intent.getStringExtra("SPEED_MODE")?:"slow"
+        if(speedMode=="slow")
+            refreshSpeed=1000
+        else
+            refreshSpeed=700
+    }
     fun refreshScore(){
         (context as Activity).findViewById<TextView>(R.id.score_textview).setText(score.toString())
     }

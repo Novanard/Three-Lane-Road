@@ -26,22 +26,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        // Retrieve the control mode from the Intent
-        val controlMode = intent.getStringExtra("CONTROL_MODE") ?: "buttons"
-        findViews()
-        controller = GameController(matrix, lives, this)
-        if (controlMode == "buttons") {
-            // Initialize game with buttons
-            initArrows()
-        } else if (controlMode == "sensors") {
-            // Initialize game with sensors
-            tiltDetector = TiltDetector(this, controller)
-            tiltDetector?.start()
 
-            //Hiding the arrows for sensor mode
-            findViewById<FloatingActionButton>(R.id.leftArrowBtn).visibility= View.GONE
-            findViewById<FloatingActionButton>(R.id.rightArrowBtn).visibility= View.GONE
-        }
+        findViews()
+        // Retrieve the control mode from the Intent
+        getControlAndSpeed()
+
+        controller = GameController(matrix, lives, this)
         controller.startGame()
 
     }
@@ -136,5 +126,28 @@ class MainActivity : AppCompatActivity() {
             controller.changeLane(targetLane)
         }
     }
+    private fun getControlAndSpeed(){
+        val controlMode = intent.getStringExtra("CONTROL_MODE") ?: "buttons"
+        val speedMode = intent.getStringExtra("SPEED_MODE")?:"slow"
 
+        if (controlMode == "buttons") {
+            initArrows()
+        } else if (controlMode == "sensors") {
+            // Initialize game with sensors
+            tiltDetector = TiltDetector(this, controller)
+            tiltDetector?.start()
+
+            //Hiding the arrows for sensor mode
+            hideArrows()
+        }
+        if(speedMode=="slow")
+            intent.putExtra("LOOP_SPEED",1000)
+        else
+            intent.putExtra("LOOP_SPEED",500)
+
+    }
+    private fun hideArrows(){
+        findViewById<FloatingActionButton>(R.id.leftArrowBtn).visibility= View.GONE
+        findViewById<FloatingActionButton>(R.id.rightArrowBtn).visibility= View.GONE
+    }
 }
