@@ -1,20 +1,21 @@
 package com.example.three_lane_road
-
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import fragments.HighScoresFragment
 
 class HighscoresLocation : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_highscores_location)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        // Load the HighScoresFragment into the highscore_fragment container
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.highscore_fragment, HighScoresFragment())
+            .commit()
+
+        findViewById<Button>(R.id.restart_button).setOnClickListener {
+            // Restart game logic here
         }
     }
 }

@@ -2,6 +2,7 @@ package logic
 
 import android.app.Activity
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Build
 import android.os.Handler
@@ -57,27 +58,31 @@ class GameController(
     fun startGame() {
         handler.postDelayed(object : Runnable {
             override fun run() {
-                if (!gameStarted) { // Game lost and need a reset
+                if (!gameStarted) { // Game lost and needs a reset
+                    saveHighScores(score)
                     prepareMatrix()
                     resetGameState()
-                    handler.removeCallbacksAndMessages(null) //To stop the game from running
+                    handler.removeCallbacksAndMessages(null) // To stop the game from running
                     switchToHighScoresAndLocation()
+                    return // Exit the Runnable
                 }
                 moveObstaclesDown()
                 moveCoinsDown()
-                score+=1 // "Increasing the score/odometer"
+                score += 1 // "Increasing the score/odometer"
                 refreshScore()
-                if(obsCounter==3) { //If we reached 3 obstacles we spawn a coin and reset the counter
+                if (obsCounter == 3) { // If we reached 3 obstacles, spawn a coin and reset the counter
                     obsCounter = 0
                     addRandomCoin()
-                }
-                else {
+                } else {
                     addRandomObstacle()
                 }
-                handler.postDelayed(this, 1000)
+                if (gameStarted) {
+                    handler.postDelayed(this, 1000) //Loop only if the game is started
+                }
             }
         }, 1000)
     }
+
     fun refreshScore(){
         (context as Activity).findViewById<TextView>(R.id.score_textview).setText(score.toString())
     }
@@ -199,7 +204,7 @@ class GameController(
 
         handler.postDelayed({
             startGame()
-        }, 2000)
+        }, 1000)
     }
     private fun switchToHighScoresAndLocation(){
         handler.removeCallbacksAndMessages(null) //To stop the game from running in the background
@@ -236,6 +241,37 @@ class GameController(
 
     fun getScore():Int{
         return score
+    }
+    fun saveHighScores(newScore: Int): Boolean {
+
+        val sharedPreferences = context.getSharedPreferences("HighScoresList", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        // Retrieve the existing high scores
+        val highScoresString = sharedPreferences.getString("highScores", null)
+        val highScores = if (!highScoresString.isNullOrEmpty()) {
+            highScoresString.split(",").map { it.toInt() }.toMutableList()
+        } else {
+            mutableListOf()
+        }
+
+        // Check if the new score is the highest score
+        val isHighestScore = highScores.isEmpty() || newScore > highScores.maxOrNull()!!
+
+        // Add the new score if it qualifies as a high score
+        if (highScores.size < 10 || newScore > highScores.last()) {
+            highScores.add(newScore)
+            highScores.sortDescending() // Sort in descending order
+            if (highScores.size > 10) {
+                highScores.removeLast() // Keep only the top 10
+            }
+
+            // Save the updated high scores back to SharedPreferences
+            val updatedScoresString = highScores.joinToString(",")
+            editor.putString("highScores", updatedScoresString)
+            editor.apply()
+        }
+        return isHighestScore
     }
 
     // SENSOR FUNCTIONS

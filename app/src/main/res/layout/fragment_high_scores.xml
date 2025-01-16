@@ -3,11 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fragments.HighScores">
+    tools:context="fragments.HighScoresFragment"
+    android:background="@color/bg_color">
 
     <TextView
+        android:id="@+id/high_scores_text_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:padding="@dimen/titlePadding"
+        android:text="@string/high_scores"
+        android:textSize="@dimen/text_title_size"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="top"
+        android:layout_margin="@dimen/text_margin"/>
 
 </FrameLayout>
