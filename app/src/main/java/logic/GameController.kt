@@ -2,6 +2,7 @@ package logic
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
@@ -14,6 +15,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageView
+import com.example.three_lane_road.HighscoresLocation
 import com.example.three_lane_road.R
 import interfaces.TiltCallback
 import kotlinx.coroutines.Runnable
@@ -58,6 +60,8 @@ class GameController(
                 if (!gameStarted) { // Game lost and need a reset
                     prepareMatrix()
                     resetGameState()
+                    handler.removeCallbacksAndMessages(null) //To stop the game from running
+                    switchToHighScoresAndLocation()
                 }
                 moveObstaclesDown()
                 moveCoinsDown()
@@ -67,9 +71,9 @@ class GameController(
                     obsCounter = 0
                     addRandomCoin()
                 }
-                else
-                addRandomObstacle()
-
+                else {
+                    addRandomObstacle()
+                }
                 handler.postDelayed(this, 1000)
             }
         }, 1000)
@@ -191,11 +195,17 @@ class GameController(
     private fun endGame() {
         gameStarted = false
         handler.removeCallbacksAndMessages(null)
-        Toast.makeText(context, "Game over, starting a new game", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Game over!Moving to next screen", Toast.LENGTH_SHORT).show()
 
         handler.postDelayed({
             startGame()
-        }, 1000)
+        }, 2000)
+    }
+    private fun switchToHighScoresAndLocation(){
+        handler.removeCallbacksAndMessages(null) //To stop the game from running in the background
+        val intent = Intent(context,HighscoresLocation::class.java)
+        context.startActivity(intent)
+        (context as Activity).finish()
     }
 
     private fun resetGameState() {
