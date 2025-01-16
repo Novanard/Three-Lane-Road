@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="000000"
+        android:text="0"
         android:textSize="22sp"
         android:layout_marginTop="@dimen/heart_margin"
         android:layout_marginLeft="10dp"
@@ -370,7 +370,7 @@
             android:layout_height="100dp"
             app:srcCompat="@drawable/ic_left_arrow"
             android:layout_margin="@dimen/obs_margin"
-            android:contentDescription="Move left"
+            android:contentDescription="@string/move_left"
             android:layout_alignParentLeft="true"/>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/rightArrowBtn"
@@ -379,7 +379,7 @@
             app:srcCompat="@drawable/ic_right_arrow"
             android:layout_margin="@dimen/obs_margin"
             android:layout_alignParentRight="true"
-            android:contentDescription="Move right"/>
+            android:contentDescription="@string/move_right"/>
 
 
     </RelativeLayout>

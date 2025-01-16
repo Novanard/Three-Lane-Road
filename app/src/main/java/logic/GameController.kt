@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
@@ -33,7 +34,7 @@ class GameController(
     private val numLanes = 5
     private val handler = Handler(Looper.getMainLooper())
     private var gameStarted = true
-    private var refreshSpeed=1000
+    private var refreshSpeed=800
     private var obsCounter = 0 // For every 3 obstacles 1 coin is spawned
     init {
         prepareMatrix()
@@ -88,10 +89,17 @@ class GameController(
     private fun checkSpeed(){
         val speedMode=(context as Activity).intent.getStringExtra("SPEED_MODE")?:"slow"
         if(speedMode=="slow")
-            refreshSpeed=1000
+            refreshSpeed=800
         else
-            refreshSpeed=700
+            refreshSpeed=450
     }
+    private fun clearHighScores() { //Run once to clear the highscore from sharedPreferences
+        val sharedPreferences = context.getSharedPreferences("HighScoresList", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.remove("highScores")
+        editor.apply()
+    }
+
     fun refreshScore(){
         (context as Activity).findViewById<TextView>(R.id.score_textview).setText(score.toString())
     }
@@ -118,6 +126,7 @@ class GameController(
 
     private fun addRandomObstacle() {
         val randomLane = (0 until numLanes).random()
+        matrix[0][randomLane].setImageResource(R.drawable.obs_icon)
         matrix[0][randomLane].visibility = View.VISIBLE
         matrix[0][randomLane].tag="OBSTACLE"
         obsCounter+=1
@@ -191,6 +200,7 @@ class GameController(
 
     private fun handleCrash() {
         numLives -= 1 // Decrement lives
+        playCrashSound()
         if (numLives >= 0) { // Updating the hearts icon layout
             lives[numLives].visibility = View.INVISIBLE
             Toast.makeText(context, "You crashed!", Toast.LENGTH_SHORT).show()
@@ -203,9 +213,23 @@ class GameController(
     }
     private fun collectCoin(){
         score+=1
+        playCoinsSound()
     }
 
-
+    private fun playCrashSound(){
+        val mediaPlayer = MediaPlayer.create(context, R.raw.crash_sound)
+        mediaPlayer.setOnCompletionListener {
+            mediaPlayer.release() // Release resources when playback completes
+        }
+        mediaPlayer.start()
+    }
+    private fun playCoinsSound(){
+        val mediaPlayer = MediaPlayer.create(context, R.raw.coin_sound)
+        mediaPlayer.setOnCompletionListener {
+            mediaPlayer.release() // Release resources when playback completes
+        }
+        mediaPlayer.start()
+    }
     private fun endGame() {
         gameStarted = false
         handler.removeCallbacksAndMessages(null)

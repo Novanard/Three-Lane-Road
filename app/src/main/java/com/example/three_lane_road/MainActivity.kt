@@ -28,11 +28,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         findViews()
-        // Retrieve the control mode from the Intent
-        getControlAndSpeed()
-
         controller = GameController(matrix, lives, this)
+        getControlAndSpeed()
         controller.startGame()
+
+        // Retrieve the control mode from the Intent
+
+
+
 
     }
     private fun findViews() {

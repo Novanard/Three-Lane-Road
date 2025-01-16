@@ -17,7 +17,6 @@ class HighScoresFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_high_scores, container, false)
-
         val highScoresTextView: TextView = view.findViewById(R.id.high_scores_text_view)
 
         // Retrieve high scores from SharedPreferences

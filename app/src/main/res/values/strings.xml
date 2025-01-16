@@ -13,4 +13,8 @@
     <string name="play_again">Play Again</string>
     <string name="high_scores">High Scores</string>
     <string name="no_high_scores_yet">No high scores yet!</string>
+    <string name="location_of_the_highest_score">Location Of The Highest Score:</string>
+    <string name="high_score_list">High Score List</string>
+    <string name="move_right">Move right</string>
+    <string name="move_left">Move left</string>
 </resources>
