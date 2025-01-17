@@ -18,7 +18,6 @@ Avoid obstacles, collect coins, and survive as long as possible while managing s
 - **Menu options**:
   - **2-button mode**: Slow and fast movement controls.
   - **1-sensor mode**: Tilt controls for movement.
-- **Bonus feature**: Tilt the device back and forth to adjust speed dynamically.
 - **Endless gameplay**: The game continues endlessly, challenging the player to survive as long as possible.
 
 ---
